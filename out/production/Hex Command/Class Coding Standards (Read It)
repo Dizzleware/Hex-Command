@@ -1,0 +1,18 @@
+These are the coding standards for classes:
+
+public class Class{
+    Enums
+
+    Variables
+
+    Constructors
+
+    Methods
+
+}
+
+/*
+    Comment your code, use appropriate, descriptive variable and method names.
+
+    WRITE EXTENSIBLE CODE!
+*/
