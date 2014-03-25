@@ -32,12 +32,16 @@ public class Main {
             // set the color of the quad (R,G,B,A)
             GL11.glColor3f( 1.0f, 1.0f,1.0f);
             Map m = new Map();
-            m.drawHex(600,500,30);
-            m.drawRow( 50,50);
-            Display.update();
+
+            int x = 0;
+            while(x < 20) {
+                m.drawRow(0,0);
+
+                Display.update();
         }
 
         Display.destroy();
+        }
     }
 
     public static void main(String[] argv){

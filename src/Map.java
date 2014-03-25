@@ -26,16 +26,15 @@ public class Map {
 
     }
 
-    public void drawRow(int xPos, int yPos){
+    public void drawRow(int xOff, int yPos){
         int counter = 0;
-        int x = xOrigin + (sideLength);
-        while(x >= xOrigin + (sideLength) && x <= (xOrigin + width) - sideLength)
+        int x = (xOrigin + xOff) + (sideLength);
+        while(x >= (xOrigin + xOff) +  (sideLength) && x <= (xOrigin + width) - sideLength)
         {
             GL11.glColor3f(1f, 1f, 1f);
             counter++;
             drawHex(x , yPos+(sideLength / 2), sideLength - 1);
-            x = (xPos / 2) + (counter * (sideLength * 2));
-
+            x = x + (sideLength * 2);
         }
 
     }
