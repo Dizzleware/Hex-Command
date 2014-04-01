@@ -9,6 +9,7 @@ public class Row {
     int top, bottom;
     int rowNumber;
     int sideLength;
+    int yPos;
 
     //Methods
     public Tile searchRow(int x){
@@ -23,12 +24,18 @@ public class Row {
         }
         return new Tile();
     }
+
+    public void drawRow(){
+        for(int i = 0; i <= Tiles.size(); i++){
+            Tiles.get(i).drawHex();
+        }
+    }
     //Constructors
-    public Row(int num, int s) {
+    public Row(int num, int s, int YPOS) {
         rowNumber = num;
         sideLength = s;
         top = rowNumber * 2 * sideLength;
         bottom = top - (2 * sideLength);
-
+        yPos = YPOS;
     }
 }

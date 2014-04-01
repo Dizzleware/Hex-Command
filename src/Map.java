@@ -26,31 +26,21 @@ public class Map {
 
     }
 
-    public void drawRow(int xOff, int yPos){
+    public void drawRow(int xOff, Row row){
         int counter = 0;
+        int yPos = row.yPos;
         int x = (xOrigin + xOff) + (sideLength);
         while(x >= (xOrigin + xOff) +  (sideLength) && x <= (xOrigin + width) - sideLength)
         {
             GL11.glColor3f(1f, 1f, 1f);
             counter++;
-            drawHex(x , yPos+(sideLength / 2), sideLength - 1);
+            row.drawRow();
             x = x + (sideLength * 2);
         }
 
     }
 
-    public void drawHex(int x, int y, int s) {
-        int s2 = s / 2;
 
-        GL11.glBegin(GL11.GL_POLYGON);
-        GL11.glVertex2i(x, y - s);
-        GL11.glVertex2i(x - s, y - s2);
-        GL11.glVertex2i(x - s, y + s2);
-        GL11.glVertex2i(x, y + s);
-        GL11.glVertex2i(x + s, y + s2);
-        GL11.glVertex2i(x + s, y - s2);
-        GL11.glEnd();
-    }
 
     public int getHeight() {
         return height;
